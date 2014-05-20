@@ -62,9 +62,11 @@ for the :program:`celery` command-line program:
 
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'proj.settings')
 
-You don't need this line, but it saves you from always passing in the
-settings module to the celery program.  It must always come before
-creating the app instances, which is what we do next:
+You don't need this line, but if you don't provide it, you will need
+to ensure the :envvar:`DJANGO_SETTINGS_MODULE` environment variable
+is set when you run the worker.  :envvar:`DJANGO_SETTINGS_MODULE` 
+must always be set before creating the app instances, which is what 
+we do next:
 
 .. code-block:: python
 
